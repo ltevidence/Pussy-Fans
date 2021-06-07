@@ -13,4 +13,5 @@
  *= require tree .
  *= require self
  *= require bootstrap
+ *= require main
  */
