@@ -27,7 +27,7 @@ def create_items(nb_items)
     title = Faker::Book.title
     description = Faker::Lorem.sentences(number: rand(3..8))
     price = Faker::Number.between(from: 15.0, to: 100.0).round(2)
-    image_url = Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['cat'], match_all: true)
+      image_url = "#{idx_item + 1}.jpg"
 
     item = Item.create(title: title, description: description.join(" "), price: price, image_url: image_url)
 

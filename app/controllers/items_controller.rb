@@ -14,4 +14,5 @@ class ItemsController < ActionController::Base
   def items_params
     @item.permit(:title, :description, :price, :image_url)
   end
+
 end
