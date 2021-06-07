@@ -5,7 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-ITEM_NUM=15
+require 'faker'
+
+
+ITEMS_NUM=15
+USERS_NUM=5
 
 def reset_database(tables_name)
   tables_name.each do |table_name|
@@ -36,12 +40,23 @@ def create_items(nb_items)
   end
 end
 
+def create_users(nb_users)
+  nb_users.times do |idx_user|
+    email = Faker::Internet.free_email
+    encrypted_password = Faker::Internet.password(min_length: 8, max_length: 20)
+    user = User.create(email: email, password: encrypted_password)
+
+    status_creation(user, 'user', idx_user)
+  end
+end
+
 def create_database
-  create_items(ITEM_NUM)
+  create_items(ITEMS_NUM)
+  create_users(USERS_NUM)
 end
 
 def perform
-  tables = ['items']
+  tables = ['items', 'users']
   reset_database(tables)
   create_database
 end
