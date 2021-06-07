@@ -1,20 +1,31 @@
+
+<section class="bgimage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="hero-title">Bienvenue sur votre nouveau site préféré !</h1>
+        <h4 class="text-secondary hero-subtitle">Découvrez, achetez et collectionnez des photos de chats par milliers !</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-name  padding-y-sm">
 <div class="container">
 
-<header class="section-heading">
-	<a href="#" class="btn btn-outline-primary float-right">See all</a>
-	<h3 class="section-title">Popular products</h3>
+<header class="section-heading mt-3">
+	<h3 class="section-title">La liste des images : </h3>
 </header><!-- sect-heading -->
 
 	
-<div class="row">
+<div class="row mt-3">
 <% @items.each_with_index do |item, index| %>
 	<div class="col-md-3">
-		<div href="#" class="card card-product-grid">
+		<div href="#" class="card card-product-grid mt-4">
 			<a href="#" class="img-wrap"> <%= image_tag "#{index += 1}.jpg", class:"img-thumbnail w-100"%> </a>
 			<figcaption class="info-wrap">
-				<a href="#" class="title"><%= item.title %></a>
-				<div class="price mt-1"><%= item.price%></div> <!-- price-wrap.// -->
+			<a href="items/<%=item.id%>"><%= item.title%></a>
+				<div class="price mt-1"><%= item.price %>€ </div> <!-- price-wrap.// -->
 			</figcaption>
 		</div>
 	</div> <!-- col.// -->
