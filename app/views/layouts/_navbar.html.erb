@@ -1,7 +1,7 @@
 <header class="section-header">
 <nav class="navbar navbar-main navbar-expand-lg navbar-light">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="bootstrap-ecommerce-html/images/logo.png" class="logo"></a>
+    <%= link_to image_tag("logo.png", class:"w-25"), items_path %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,13 +10,13 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
         <li class="nav-item active mr-3">
-          <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Accueil</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">A Propos de Nous</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">Les Photographies</a>
+          <a class="nav-link" href="items">Les Photographies</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">Our Work</a>
