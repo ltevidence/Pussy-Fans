@@ -16,12 +16,6 @@
           <a class="nav-link" href="#">A Propos de Nous</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="items">Les Photographies</a>
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link" href="#">Our Work</a>
-        </li>
-        <li class="nav-item mr-3">
           <a class="nav-link" href="#">Contacts</a>
         </li>
       </ul>
@@ -38,6 +32,9 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Deconnexion</a>
           </div>
+        </li>
+            <li class="nav-item mr-3">
+          <%= link_to "Se deconnecter", destroy_user_session_path, class:"nav-link btn btn-warning text-white" %>
         </li>
       </ul>
     </div>
