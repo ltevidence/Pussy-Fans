@@ -4,11 +4,12 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
 
     @user = user 
+    @item = item
 
 
-    @url  = 'htt p://pussyfans.fr/login' 
+    @url  = 'http://pussyfans.fr/login' 
 
 
-    mail(to: @user.email, subject: 'Bienvenue !') 
+    mail(to: @user.email, subject: 'Bienvenue dans l\'univers bienveillant des chats ! 😽') 
   end
 end
