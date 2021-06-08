@@ -16,6 +16,8 @@
   <header class="section-heading mt-3">
     <h3 class="section-title">La liste des images : </h3>
   </header><!-- sect-heading -->
+  
+  <%= button_to "PASSER COMMANDE", checkout_create_path(total: @item.price * 100), class:"btn btn-primary my-3", remote: true%>
     
   <%= render 'imageindex'%>
 
