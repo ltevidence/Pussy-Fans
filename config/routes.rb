@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :orders
   resources :carts
-  resources :users
+  resources :users do
+    resources :avatars, only: [:create]
+  end
+
   resources :items
 
   scope '/checkout' do
