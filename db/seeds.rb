@@ -47,6 +47,7 @@ def create_users(nb_users)
     encrypted_password = Faker::Internet.password(min_length: 8, max_length: 20)
     user = User.create(email: email, password: encrypted_password)
     cart = user.build_cart
+    cart.save
 
     status_creation(cart, 'cart', idx_user)
     status_creation(user, 'user', idx_user)
@@ -59,7 +60,7 @@ def create_database
 end
 
 def perform
-  tables = ['items', 'users']
+  tables = ['items', 'users', 'carts']
   reset_database(tables)
   create_database
 end
