@@ -7,6 +7,8 @@ class UsersController < ActionController::Base
 
   def show
     @user = User.find(params[:id])
+    @orders = Order.all
+    @order = @orders.sample
   end
 
   def new
