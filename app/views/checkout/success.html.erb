@@ -1,0 +1,10 @@
+<h1>Checkout#success</h1>
+<p>Find me in app/views/checkout/success.html.erb</p>
+<div class="container text-center my-5">
+  <h1> Succès </h1>
+  <p>Nous avons bien reçus votre paiement de 
+  <%= number_to_currency(@payment_intent.amount_received / 100.0, unit: '€',
+                         separator: ',', delimiter: '', format: "%n %u") %>.
+  </p>
+  <p> Le status de votre payement est: <%= @payment_intent.status %>. </p>
+</div>

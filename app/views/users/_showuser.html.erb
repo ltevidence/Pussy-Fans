@@ -1,0 +1,39 @@
+      <body>
+      <div class="container">
+      <div class="card">
+       <div class="row no-gutters">
+      <div class="card-body">
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card-body">
+          <%= image_tag "placeholder.png", class:"img-profile"%>
+            <hr>
+          <h5 class="card-text text-center">John</h5>
+          <h5 class="card-text text-center">Doe</h5>
+          <h5 class="card-text text-center"><%= @user.email %></h5>
+        </div>
+    </div>
+      <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-text text-center">Mes commandes : </h3>
+        <br>
+        <p class="card-text description"><p class="card-text"></p>
+        <% if user_id(@order) %>
+          <%= render 'orders/orderindex'%>
+          <%else%>
+          <p>Aucune commande effectuée</p>
+          <%end%>
+      </div>
+      </div>
+      
+  </div>
+    </div>
+      </div>
+         <div class="card-footer bg-primary text-light">
+      <caption>Profil crée le <%=@user.created_at%></caption>
+      </div>
+      </div>
+      <br>
+
+</body>
