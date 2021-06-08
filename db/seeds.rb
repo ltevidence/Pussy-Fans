@@ -36,6 +36,7 @@ def create_items(nb_items)
     image_url = "#{idx_item + 1}.jpg"
 
     item = Item.create(title: title, description: description.join(' '), price: price, image_url: image_url)
+    puts "--------------- Item n°#{idx_item} ----------------\n\n"
 
     status_creation(item, 'item', idx_item)
   end
@@ -57,8 +58,8 @@ def create_users(nb_users)
 end
 
 def create_orders(nb_orders)
+  item = Item.all.sample
   nb_orders.times do |idx_order|
-    item = Item.all.sample
     cart = Cart.all.sample
     order = Order.create(item: item, cart: cart)
 
