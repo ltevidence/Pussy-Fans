@@ -7,7 +7,16 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card-body">
-          <%= image_tag "placeholder.png", class:"img-profile"%>
+          <%if @user.avatar.attached?%>
+            <%= image_tag @user.avatar, alt: 'avatar', class:"avatar shadow"%>
+          <%else%>
+            <p>Pas d'avatar défini</p>
+            <h3>Changer d'avatar ?</h3>
+              <%= form_tag user_avatars_path(@user), multipart: true do %>
+              <%= file_field_tag :avatar %>
+              <%= submit_tag "mettre à jour" %>
+            <% end %>
+            <%end%>
             <hr>
           <h5 class="card-text text-center">John</h5>
           <h5 class="card-text text-center">Doe</h5>
