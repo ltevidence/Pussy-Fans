@@ -18,5 +18,3 @@ module PussyFans
   end
 end
 
-config.asset_host = 'http://example.com'
-
