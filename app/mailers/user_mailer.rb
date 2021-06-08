@@ -3,11 +3,10 @@ class UserMailer < ApplicationMailer
  
   def welcome_email(user)
 
-    @user = user 
-    @item = item
+    @user = user
 
 
-    @url  = 'pussyfans21.herokuapp.com/users/sign_in' 
+    @url  = 'https://pussyfans21.herokuapp.com/users/sign_in' 
 
 
     mail(to: @user.email, subject: 'Bienvenue dans l\'univers bienveillant des chats ! 😽') 
