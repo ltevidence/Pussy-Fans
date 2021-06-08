@@ -10,6 +10,7 @@ require 'faker'
 
 ITEMS_NUM = 20
 USERS_NUM = 10
+ORDERS_NUM = 5
 
 def reset_database(tables_name)
   tables_name.each do |table_name|
@@ -47,19 +48,34 @@ def create_users(nb_users)
     encrypted_password = Faker::Internet.password(min_length: 8, max_length: 20)
     user = User.create(email: email, password: encrypted_password)
     cart = user.build_cart
-
+    cart.save
+    puts "--------------- User n°#{idx_user} ----------------\n\n"
     status_creation(cart, 'cart', idx_user)
     status_creation(user, 'user', idx_user)
+    puts "\n"
+  end
+end
+
+def create_orders(nb_orders)
+  nb_orders.times do |idx_order|
+    item = Item.all.sample
+    cart = Cart.all.sample
+    order = Order.create(item: item, cart: cart)
+
+    puts "--------------- Order n°#{idx_order} ----------------\n\n"
+    status_creation(order, 'order', idx_order)
+    puts "\n"
   end
 end
 
 def create_database
   create_items(ITEMS_NUM)
   create_users(USERS_NUM)
+  create_orders(ORDERS_NUM)
 end
 
 def perform
-  tables = ['items', 'users']
+  tables = ['items', 'users', 'carts', 'orders']
   reset_database(tables)
   create_database
 end
