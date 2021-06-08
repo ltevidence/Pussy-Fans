@@ -3,14 +3,21 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
-  <body>
-    <h1>Bonjour <%= @user.email %> et bienvenue dans l'univers bienveillant des chats !</h1>
+  <body class="bg-light">
+    <div class="bg-info text-white container">
+      <br>
+    <h1>Bonjour <%= @user.email %> et bienvenue !</h1>
     <p>
-      Tu t'es inscrit sur pussyfans.fr en utilisant l'e-mail suivant : <%= @user.email %>.
+      <preview>Tu t'es inscrit.e sur <a href="https://pussyfans21.herokuapp.com">pussyfan21.com</a>...</preview>
+
+      Tu t'es inscrit.e sur pussyfans.fr en utilisant l'e-mail suivant : <%= @user.email %>, tu vas enfin pouvoir <strong>commander des photos de chats</strong> !
     </p>
     <p>
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+      Pour accéder à ton espace client, connecte-toi via : <a href="https://pussyfans21.herokuapp.com/users/sign_in">pussyfans21.com</a>.
     </p>
-    <p> À très vite sur pussyfans.fr !
+    <p> À très vite sur <a href="https://pussyfans21.herokuapp.com">pussyfans21.com</a> !</p>
+    <%= image_tag "logo.png", class:"w-25" %>
+  <br>
+  </div>
   </body>
 </html>
