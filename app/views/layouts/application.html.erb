@@ -11,7 +11,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar'  %>
+  <%if user_signed_in? %>
+    <%= render "layouts/usernav" %>
+  <%else%>
+    <%= render "layouts/navbar"%>
+  <%end%>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

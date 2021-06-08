@@ -4,6 +4,15 @@
   object-fit: cover;
   margin: auto;
 }
+.img-index {
+  width: 200px;
+  height:175px;
+  object-fit: cover;
+  margin: auto;
+}
+.img-profile {
+width: 100%;
+}
 
 .bgimage {
   width:100%;
