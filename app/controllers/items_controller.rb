@@ -3,6 +3,7 @@ class ItemsController < ActionController::Base
 
   def index
     @items = Item.all
+    @item = @items.sample
   end
 
   def show
