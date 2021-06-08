@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_one :cart, dependent: :destroy
   has_one :cart_id, through: :cart
+  after_create :welcome_send
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 end
