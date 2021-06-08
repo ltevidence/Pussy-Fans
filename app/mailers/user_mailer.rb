@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
     @item = item
 
 
-    @url  = 'http://pussyfans.fr/login' 
+    @url  = 'pussyfans21.herokuapp.com/users/sign_in' 
 
 
     mail(to: @user.email, subject: 'Bienvenue dans l\'univers bienveillant des chats ! 😽') 
