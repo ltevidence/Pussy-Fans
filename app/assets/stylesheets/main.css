@@ -23,6 +23,9 @@ width: 100%;
   background-size:cover;
   background-attachment: fixed;
 }
+h1.icone {
+  font-size: 2rem;
+}
 
 .hero-title {
   margin-top: 20%;
