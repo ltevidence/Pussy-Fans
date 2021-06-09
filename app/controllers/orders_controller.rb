@@ -9,6 +9,9 @@ class OrdersController < ActionController::Base
     @order = Order.find(params[:id])
   end
 
+  def new
+  end
+
   private 
 
   def orders_params
