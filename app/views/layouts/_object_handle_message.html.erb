@@ -1,0 +1,14 @@
+<% if local_assigns[:object_created].errors.any? %>
+  <div class="alert alert-danger">
+    <p><%= local_assigns[:message_failure] %></p>
+    <ul>
+      <% object_created.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="alert alert-sucess">
+    <p><%= local_assigns[:success_message] %></p>
+  </div>
+<% end %>
