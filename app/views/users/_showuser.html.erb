@@ -17,13 +17,13 @@
             <%end%>
               <%= form_tag user_avatars_path(@user), multipart: true do %>
               <%= file_field_tag :avatar , class:"form-control btn btn-secondary mb-3"%>
-              <%= submit_tag "mettre à jour", class:"btn btn-secondary form-control" %>
+              <%= submit_tag  "", class:"btn btn-secondary form-control fas fa-angle-right" %>
             <% end %>
             <hr>
           <h5 class="card-text text-center">John</h5>
           <h5 class="card-text text-center">Doe</h5>
           <h5 class="card-text text-center"><%= @user.email %></h5>
-          <%= link_to "Changer le mot de passe" ,edit_user_password_path %>
+            <%= link_to "Changer le mot de passe" ,edit_user_password_path, class:"nav-link btn btn-danger" %>
         </div>
     </div>
       <div class="col-md-8">
@@ -36,9 +36,9 @@
           <%else%>
           <p>Aucune commande effectuée</p>
           <%end%>
+          
       </div>
       </div>
-      
   </div>
     </div>
       </div>
