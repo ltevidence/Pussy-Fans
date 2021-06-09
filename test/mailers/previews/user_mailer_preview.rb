@@ -8,6 +8,6 @@ end
 
   def confirmation_email
 
-    UserMailer.confirmation_email(User.first)
+    UserMailer.confirmation_email(Order.first)
   end
 end

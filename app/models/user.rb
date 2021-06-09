@@ -12,7 +12,4 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
 
-  def confirmation_send
-    UserMailer.confirmation_email.deliver_now
-  end
 end

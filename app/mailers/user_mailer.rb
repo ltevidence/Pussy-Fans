@@ -8,9 +8,11 @@
 
   end
 
-  def confirmation_email(user)
+  def confirmation_email(order)
 
-    mail(to: 'test', subject: 'Merci pour votre achat ! 😺 ') 
+    @order = order
+
+    mail(to: @order.user.email, subject: 'Merci pour votre achat ! 😺 ') 
 
   end
 end

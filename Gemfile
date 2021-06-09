@@ -67,3 +67,5 @@ gem 'stripe'
 gem 'cloudinary'
 gem 'faker'
 gem 'table_print'
+
+gem 'premailer-rails'
