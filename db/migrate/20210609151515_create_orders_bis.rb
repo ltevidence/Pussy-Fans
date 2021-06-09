@@ -1,4 +1,4 @@
-class CreateOrders < ActiveRecord::Migration[5.2]
+class CreateOrdersBis < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
       t.belongs_to :user, index: true
