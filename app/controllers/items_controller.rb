@@ -12,6 +12,8 @@ class ItemsController < ActionController::Base
     @cart = @current_user.cart
     if (@current_user)
       @cart
+    else 
+      
     end
   end
 
