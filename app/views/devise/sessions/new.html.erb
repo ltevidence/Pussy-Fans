@@ -1,14 +1,21 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <body>
+    <div class="container h-100 mt-5">
+      <div class="row h-100 justify-content-center align-items-center mt-5">
+        <div class="col-10 col-md-8 col-lg-6">
+          <!-- Form -->
+          <form class="form-example" action="" method="post">
+            <h1 class="d-flex justify-content-center align-items-center">
+              Connexion
+            </h1>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group mt-4">
+    <%= f.label :email, "Adresse Mail" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "Entrer l'adresse mail", class:"form-control username" %>
   </div>
 
-  <div class="field">
+  <div class="form-group mt-4">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "Entrer mot de passe", class:"form-control password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -18,9 +25,15 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="form-group">
+    <%= f.submit "Connexion", class:"btn btn-primary btn-customized mt-3" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<br />
+<%= render "devise/shared/links"%>
+        </form>
+          <!-- Form end -->
+        </div>
+      </div>
+    </div>
+  </body>
