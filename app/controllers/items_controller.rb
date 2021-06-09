@@ -9,12 +9,6 @@ class ItemsController < ActionController::Base
 
   def show
     @item = Item.find(params[:id])
-    @cart = @current_user.cart
-    if (@current_user)
-      @cart
-    else 
-      
-    end
   end
 
   def create
