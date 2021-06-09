@@ -1,0 +1,2 @@
+class CreateItemOrder < ApplicationRecord
+end
