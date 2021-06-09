@@ -1,77 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <body class="bg-light">
-    <div class="bg-info text-white container">
-      <br>
-    <h1>Bonjour <%= @user.email %> et bienvenue !</h1>
-    <p>
-      Tu t'es inscrit.e sur pussyfans.fr en utilisant l'e-mail suivant : <%= @user.email %>, tu vas enfin pouvoir <strong>commander des photos de chats</strong> !
-    </p>
-    <p>
-      Pour accéder à ton espace client, connecte-toi via : <a href="https://pussyfans21.herokuapp.com/users/sign_in">pussyfans21.com/sign_in</a>.
-    </p>
-    <p> À très vite sur <a href="https://pussyfans21.herokuapp.com">pussyfans21.com</a> !</p>
-    <%= image_tag "logo.png", class:"w-25" %>
+
+<body class="bg-light">
   <br>
+  <div class="container">
+    <div class="card border-primary mb-3" style="max-width: 60rem;">
+      <div class="card-body">
+        <h4 class="card-title">Bienvenue, <%= @user.email %></h4>
+        <p class="card-text">Tu t'es inscrit.e sur pussyfans.fr en utilisant l'e-mail suivant : <%= @user.email %>, tu vas enfin pouvoir <a href="https://pussyfans21.herokuapp.com"><strong>commander des photos de chats</strong></a> !</p>
+        <p class="card-text">Pour accéder à ton espace client, connecte-toi via : <a href="https://pussyfans21.herokuapp.com/users/sign_in">pussyfans21.com/sign_in</a>.</p>
+        <p class="card-text">À très vite sur <a href="https://pussyfans21.herokuapp.com">pussyfans21.com</a> !</p>
+        <%= image_tag "logo.png", class:"w-25" %>
+      </div>
+    </div>
   </div>
-  </body>
+</body>
 </html>
 
 
 
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Primary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Secondary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-success mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Success card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-danger mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Danger card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-warning mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Warning card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-info mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Info card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Light card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card border-dark mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Dark card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
