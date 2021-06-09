@@ -7,9 +7,7 @@
           <a href="items/<%=item.id%>"><%= item.title%></a>
           <div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
         </figcaption>
-        <button class="btn btn-danger" onclick="buttonClick(<%=item.id%>)">Acheter</button> 
-        <%= link_to "Créer un nouveau mail", create_order_path(:item_id => item.id), { method: "post", action: "create", } %>
-        <%= link_to "Acheter", create_order_path, method: "create", class: "btn btn-danger" %>
+        <%= link_to "Acheter", create_order_path(:item_id => item.id), { method: "post", action: "create", class:"btn btn-warning" } %>
       </div>
     </div> <!-- col.// --> 
   <%end%>
