@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body class="bg-light">
-    <div class="bg-info text-white container">
-      <br>
-    <h1>Bonjour <%= @user.email %> et bienvenue !</h1>
-    <p>
-      Tu t'es inscrit.e sur pussyfans.fr en utilisant l'e-mail suivant : <%= @user.email %>, tu vas enfin pouvoir <strong>commander des photos de chats</strong> !
-    </p>
-    <p>
-      Pour accéder à ton espace client, connecte-toi via : <a href="https://pussyfans21.herokuapp.com/users/sign_in">pussyfans21.com</a>.
-    </p>
-    <p> À très vite sur <a href="https://pussyfans21.herokuapp.com">pussyfans21.com</a> !</p>
-    <%= image_tag "logo.png", class:"w-25" %>
+
+<body class="bg-light">
   <br>
+  <div class="container">
+    <div class="card border-primary mb-3" style="max-width: 60rem;">
+      <div class="card-body">
+        <h4 class="card-title">Bienvenue, <%= @user.email %></h4>
+        <p class="card-text">Tu t'es inscrit.e sur pussyfans.fr en utilisant l'e-mail suivant : <%= @user.email %>, tu vas enfin pouvoir <a href="https://pussyfans21.herokuapp.com"><strong>commander des photos de chats</strong></a> !</p>
+        <p class="card-text">Pour accéder à ton espace client, connecte-toi via : <a href="https://pussyfans21.herokuapp.com/users/sign_in">pussyfans21.com/sign_in</a>.</p>
+        <p class="card-text">À très vite sur <a href="https://pussyfans21.herokuapp.com">pussyfans21.com</a> !</p>
+        <%= image_tag "logo.png", class:"w-25" %>
+      </div>
+    </div>
   </div>
-  </body>
+</body>
 </html>
+
+
+
