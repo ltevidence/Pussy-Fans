@@ -1,22 +1,20 @@
-class OrdersController < ActionController::Base
+class ItemCartsController < ActionController::Base
   layout "application"
   before_action :authenticate_user!, only: [:create]
 
   def index
-    @orders = Order.all
+    @items_of_cart = ItemCart.all
   end
 
   def show
-    @order = Order.find(params[:id])
+    @items_of_cart = ItemCart.find(params[:id])
   end
 
-  def new
-  end
   def create
     @item = Item.find(params[:item_id])
     @cart = current_user.cart
-    @order = Order.new(item: @item, cart: @cart)
-    if (@order.save)
+    @items_of_cart = ItemCart.new(item: @item, cart: @cart)
+    if (@items_of_cart.save)
       flash[:success] = "Bravo la photo n°#{@item.id} a bien été ajouté au panier"
       render 'items#index'
     else
@@ -25,10 +23,10 @@ class OrdersController < ActionController::Base
 
   end
 
-  private 
+  private
 
-  def orders_params
-    @order.permit(:cart_id, :item_id)
+  def item_carts_params
+    @item_cart.permit(:cart_id, :item_id)
   end
 end
 
