@@ -1,14 +1,15 @@
 <div class="row mt-3">
-<% @items.each_with_index do |item, index| %>
-	<div class="col-md-3">
-		<div href="#" class="card card-product-grid mt-4">
-			<a href="#" class="img-wrap"> <%= image_tag "#{index += 1}.jpg", class:"img-thumbnail w-100"%> </a>
-			<figcaption class="info-wrap text-center">
-			<a href="items/<%=item.id%>"><%= item.title%></a>
-				<div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
-			</figcaption>
-      <button class="btn btn-danger" onclick="buttonClick(<%=item.id%>)">Acheter</button>
-		</div>
-	</div> <!-- col.// -->
-	   <%end%>
+  <% @items.each_with_index do |item, index| %>
+    <div class="col-md-3">
+      <div href="#" class="card card-product-grid mt-4">
+        <a href="#" class="img-wrap"> <%= image_tag "#{index += 1}.jpg", class:"img-thumbnail w-100"%> </a>
+        <figcaption class="info-wrap text-center">
+          <a href="items/<%=item.id%>"><%= item.title%></a>
+          <div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
+        </figcaption>
+        <button class="btn btn-danger" onclick="buttonClick(<%=item.id%>)">Acheter</button> 
+        <%= link_to "Acheter", create_order_path, class: "btn btn-danger" %>
+      </div>
+    </div> <!-- col.// --> 
+  <%end%>
 </div><!-- container // -->

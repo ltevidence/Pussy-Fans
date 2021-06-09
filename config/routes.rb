@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index, :show, :create]
   resources :carts, only: [:index]
   resources :users, only: [:show] do 
     resources :avatars, only: [:create]
   end
+  post 'create', to: 'orders#create', as: 'create_order'
 
   resources :items, only: [:index, :show]
 
