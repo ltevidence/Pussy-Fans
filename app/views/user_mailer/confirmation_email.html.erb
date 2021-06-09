@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <body class="bg-light">
-    <h1>Merci pour votre commande <%= @user.email %>.</h1>
 
-  </body>
+<body class="bg-light">
+  <br>
+  <div class="container">
+    <div class="card border-primary mb-3" style="max-width: 60rem;">
+      <div class="card-body">
+        <h4 class="card-title">Merci pour votre commande, <%= @user.email %></h4>
+        <p class="card-text">Vous trouverez ci-joint les photos commandées.</p>
+        <p class="card-text">À très vite sur <a href="https://pussyfans21.herokuapp.com">pussyfans21.com</a> !</p>
+        <%= image_tag "logo.png", class:"w-25" %>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

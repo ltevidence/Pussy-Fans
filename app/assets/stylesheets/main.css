@@ -31,6 +31,9 @@ width: 100%;
 h1.icone {
   font-size: 2rem;
 }
+.logo {
+  width: 10%;
+}
 
 .hero-title {
   margin-top: 20%;
