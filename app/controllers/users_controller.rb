@@ -1,7 +1,7 @@
 class UsersController < ActionController::Base
   layout "application"
   before_action :is_profile_owner?, only: [:show]
-
+  before_action :authenticate_user!
   def index
     @users = User.all
   end

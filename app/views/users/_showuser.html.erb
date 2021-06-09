@@ -30,7 +30,7 @@
         <h3 class="card-text text-center">Mes commandes : </h3>
         <br>
         <p class="card-text description"><p class="card-text"></p>
-        <% if user_id(@order) %>
+        <% if current_user.id == params[:user_id] %>
           <%= render 'orders/orderindex'%>
           <%else%>
           <p>Aucune commande effectuée</p>

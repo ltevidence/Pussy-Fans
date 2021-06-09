@@ -1,5 +1,5 @@
 module UsersHelper
   def user_id(order)
-    order.cart.user_id
+    items_of_cart.cart.user_id
   end 
 end
