@@ -9,14 +9,16 @@
           <div class="card-body">
           <%if @user.avatar.attached?%>
             <%= image_tag @user.avatar, alt: 'avatar', class:"avatar shadow"%>
+            <h5 class="text-center mt-3">Mettre à jour l'avatar</h5>
+            <hr>
           <%else%>
             <p>Pas d'avatar défini</p>
-            <h3>Changer d'avatar ?</h3>
-              <%= form_tag user_avatars_path(@user), multipart: true do %>
-              <%= file_field_tag :avatar %>
-              <%= submit_tag "mettre à jour" %>
-            <% end %>
+            <p>Choisir un avatar ?</p>
             <%end%>
+              <%= form_tag user_avatars_path(@user), multipart: true do %>
+              <%= file_field_tag :avatar , class:"form-control btn btn-secondary mb-3"%>
+              <%= submit_tag "mettre à jour", class:"btn btn-secondary form-control" %>
+            <% end %>
             <hr>
           <h5 class="card-text text-center">John</h5>
           <h5 class="card-text text-center">Doe</h5>
