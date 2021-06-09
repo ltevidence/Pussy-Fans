@@ -1,4 +1,4 @@
-class OrdersController < ActionController::Base
+class ItemCartsController < ActionController::Base
   layout "application"
   before_action :authenticate_user!, only: [:create]
 
@@ -25,8 +25,8 @@ class OrdersController < ActionController::Base
 
   private
 
-  def orders_params
-    @order.permit(:cart_id, :item_id)
+  def item_carts_params
+    @item_cart.permit(:cart_id, :item_id)
   end
 end
 
