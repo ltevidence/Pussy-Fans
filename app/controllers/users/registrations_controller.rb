@@ -12,12 +12,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
    #POST /resource
    def create
      super
-     puts "\n" * 200
-     puts "\n\n\nCURR_USER = #{current_user.email}\n\n\n"
-     puts "\n\n\nSELF = #{self}\n\n\n"
-     @cart_to_create = current_user.build_cart
-     @cart_to_create.save
-     flash
+     if (current_user)
+       @cart_to_create = current_user.build_cart
+       @cart_to_create.save
+     end
    end
 
   # GET /resource/edit

@@ -28,9 +28,9 @@
          <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
          <div class="container"></div>
          <li class="nav-item d-flex">
-           <%= button_to  checkout_create_path(total: @item.price * 100) ,class:"btn btn-primary me-3", remote: true do %>
+           <%= link_to  item_cart_path(current_user.id), class:"btn btn-primary me-3" do %>
                 <i class="fas fa-shopping-basket"></i>
-                <% end %>
+            <% end %>
           <input id="inc" size="1" value="0"></input>
         </li>
       </ul>
