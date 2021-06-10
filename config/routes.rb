@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'user/show'
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  resources :contacts
   get 'static_pages/about'
   get 'static_pages/contact'
   root 'items#index'
