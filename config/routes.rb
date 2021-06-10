@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   post 'create', to: 'item_carts#create', as: 'create_item_cart'
 
   resources :items, only: [:index, :show], path: :potit_chat
-
-  scope '/checkout' do
-    post 'create', to: 'checkout#create', as: 'checkout_create'
-    get 'success', to: 'checkout#success', as: 'checkout_success'
-    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+  scope '/order' do
+    post 'create', to: 'order#create', as: 'order_create'
+    get 'cancel', to: 'order#cancel', as: 'order_cancel'
+    get 'success', to: 'order#success', as: 'order_success'
   end
 
 
