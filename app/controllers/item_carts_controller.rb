@@ -10,6 +10,7 @@ class ItemCartsController < ActionController::Base
   def show
     @current_cart = current_user.cart
     @items = @current_cart.items
+    @total = total(@items)
   end
 
   def create
@@ -28,6 +29,14 @@ class ItemCartsController < ActionController::Base
   end
 
   private
+
+  def total(items)
+    total = 0
+    items.each do |item|
+      total += item.price
+    end
+    return total
+  end
 
   def item_carts_params
     @item_cart.permit(:cart_id, :item_id)
