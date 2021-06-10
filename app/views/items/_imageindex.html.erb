@@ -2,9 +2,9 @@
   <% @items.each_with_index do |item, index| %>
     <div class="col-md-3">
       <div href="#" class="card card-product-grid mt-4">
-        <a href="/items/<%=item.id%>" class="img-wrap"> <%= image_tag "#{index += 1}.jpg", class:"img-thumbnail w-100"%> </a>
+        <a href="/potit_chat/<%=item.id%>" class="img-wrap"> <%= image_tag item.image_url, class:"img-thumbnail w-100"%> </a>
         <figcaption class="info-wrap text-center">
-          <a href="items/<%=item.id%>"><%= item.title%></a>
+          <a href="potit_chat/<%=item.id%>"><%= item.title%></a>
           <div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
         </figcaption>
         <%= link_to "Acheter", create_item_cart_path(:item_id => item.id), { method: "post", action: "create", class:"btn btn-warning" } %>
