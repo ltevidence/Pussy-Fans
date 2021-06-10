@@ -44,8 +44,7 @@ end
 
 def create_users(nb_users)
   nb_users.times do |idx_user|
-    first_name = Faker::Name.first_name
-    last_name = Faker::Name.last_name
+
     email = Faker::Internet.free_email
     encrypted_password = Faker::Internet.password(min_length: 8, max_length: 20)
     user = User.create(email: email, password: encrypted_password)

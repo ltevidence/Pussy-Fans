@@ -20,9 +20,9 @@
               <%= submit_tag "mettre à jour", class:"btn btn-secondary form-control" %>
             <% end %>
             <hr>
-          <h5 class="card-text text-center"><%=@user.first_name%> <%= @user.last_name%></h5>
+          <h5 class="card-text text-center">John Doe</h5>
           <h5 class="card-text text-center"><%= @user.email %></h5>
-          <%= link_to "Editer le profil" ,edit_user_registration_path, class:"btn btn-danger form-control" %>
+          <%= link_to "Changer le mot de passe" ,edit_user_password_path, class:"btn btn-danger form-control" %>
         </div>
     </div>
       <div class="col-md-8">
