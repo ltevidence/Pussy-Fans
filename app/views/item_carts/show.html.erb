@@ -1,26 +1,6 @@
 <body>
   <div class="container-fluid">
     <div class="container">
-<<<<<<< HEAD
-      <div class="row">
-        <% @items.each_with_index do |item, index| %>
-        <div class="col-md-3 d-flex align-items-stretch">
-          <div href="#" class="card card-product-grid mt-4">
-            <a href="/items/<%=item.id%>"> <%= image_tag item.image_url, class:"img-thumbnail"%> </a>
-            <figcaption class="info-wrap text-center">
-              <a href="items/<%=item.id%>"><%= item.title%></a>
-              <div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div><!-- col.// --> 
-        <%end%>
-        <div class="bd-example d-flex mt-5 justify-content-center">
-          <%= button_to "Montant total : #{@total} € TTC", checkout_create_path(total: @total * 100), class:"btn btn-info btn-lg px-5", remote: true%>
-        </div>
-
-      </div><!-- container // -->
-    </div>
-=======
     <div class="row">
   <% @items.each_with_index do |item, index| %>
     <div class="col-md-3 d-flex align-items-stretch">
@@ -35,6 +15,5 @@
   <%end%>
   <div class="bd-example d-flex mt-5 justify-content-center">
     <%= button_to "Montant total : #{@total} € TTC", checkout_create_path(total: @total * 100), class:"btn btn-info btn-lg px-5", remote: true%>
->>>>>>> e11ef3823de2a274bb6dbeceffa89e4542898dc2
   </div>
 </body>
