@@ -8,14 +8,20 @@
 
   end
 
-  def confirmation_email(order)
+  def confirmation_email(cart)
 
-    @order = order
-    @user = User.find(order.user_id)
-    @cart = @user.cart
+    @cart = Cart.find params.require(:user_id)
 
-    mail(to: @user.email, subject: 'Merci pour votre achat ! 😺 ') 
-    mail(to: 'pussyfans@yopmail.com', subject: 'Une commande vient d\'être effectuée ! 😺 ') 
+    mail(to: @cart.user.email, subject: 'Merci pour votre achat ! 😺 ')  
 
   end
+
+  #def confirmation_email(order)
+
+   # @user = User.find(params[:user_id])
+
+    #mail(to: 'pussyfans@yopmail.com', subject: 'Une commande vient d\'être effectuée ! 😺 ')
+
+  #end
+
 end
