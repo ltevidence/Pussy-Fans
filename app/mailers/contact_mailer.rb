@@ -4,7 +4,7 @@ class ContactMailer < ApplicationMailer
   def general_message(contact)
     @contact = contact
 
-    mail(to: "pussyfans@yopmail.com", subject: "Nouveau contact depuis le site")
+    mail(to: "pussyfans@yopmail.com", subject: "Nouvelle demande de contact depuis PussyFans")
   end
 end
 
