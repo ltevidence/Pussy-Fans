@@ -15,6 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      if (current_user)
        @cart_to_create = current_user.build_cart
        @cart_to_create.save
+       flash[:success] = "Bienvenue chez nous #{@user.first_name}"
      end
    end
 
