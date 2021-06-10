@@ -8,7 +8,12 @@ class ItemsController < ActionController::Base
   end
 
   def show
-    @item = Item.find(params[:id])
+    
+    respond_to do |format|
+      @item = Item.find(params[:id])
+      format.html {render 'show'}
+      format.js {}
+    end
   end
 
   def create

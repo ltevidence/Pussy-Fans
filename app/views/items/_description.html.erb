@@ -1,0 +1,8 @@
+
+        <a href="/potit_chat/<%=item.id%>" class="img-wrap"> <%= image_tag item.image_url, class:"img-thumbnail w-100"%> </a>
+        <figcaption class="info-wrap text-center">
+          <%= link_to item.title, item_path(item.id), remote: true%>
+          <div class="info-wrap"><%=item.description%></div>
+          <div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
+        </figcaption>
+        <%= link_to "Acheter", create_item_cart_path(:item_id => item.id), { method: "post", action: "create", class:"btn btn-warning" } %>
