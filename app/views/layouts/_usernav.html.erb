@@ -1,5 +1,5 @@
 <header class="section-header">
-<nav class="navbar navbar-main navbar-expand-lg navbar-light">
+<nav class="navbar navbar-main navbar-expand-lg bg-white fixed-top">
   <div class="container">
     <img src="https://res.cloudinary.com/dcmcouvju/image/upload/v1623256131/logo_rybibq.png" alt="logo PussyFans" class="logo">
 
@@ -9,8 +9,8 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
-        <li class="nav-item active mr-3">
-          <a class="nav-link" href="#">Accueil</a>
+        <li class="nav-item mr-3 ms-3">
+           <%= link_to "Accueil", root_path, class:"text-white btn btn-info" %>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">A Propos de Nous</a>
@@ -20,14 +20,18 @@
         </li>
         <li class="nav-item">
             <%= link_to "Mon Profil", user_path(current_user.id), class:"nav-link" %>
-        </li>
+        </li></ul>
+         <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0 ms-2">
             <li class="nav-item">
-          <%= link_to "Se deconnecter", destroy_user_session_path, method: "delete", class:"nav-link btn btn-warning text-white" %>
-        </li>
-      <li class="nav-item" ><h1 class="fas fa-shopping-cart btn btn-info icone"></h1>
+          <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class:"btn btn-secondary text-white" %>
+        </li></ul>
+         <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
+         <div class="container"></div>
+      <li class="nav-item d-flex" ><h2 class="fas fa-shopping-cart btn btn-info icone me-3"></h2>
       <input id="inc" size="1" value="0"></input></li>
       </ul>
     </div>
   </div>
 </nav>
 </header>
+<br /><br />

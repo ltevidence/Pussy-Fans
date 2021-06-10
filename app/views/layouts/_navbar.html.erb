@@ -1,7 +1,7 @@
 <header class="section-header">
-<nav class="navbar navbar-main navbar-expand-lg navbar-light">
+<nav class="navbar navbar-default navbar-expand-lg bg-white fixed-top">
   <div class="container">
-    <img src="https://res.cloudinary.com/dcmcouvju/image/upload/v1623256131/logo_rybibq.png" alt="logo PussyFans" class="logo">
+  <img src="https://res.cloudinary.com/dcmcouvju/image/upload/v1623256131/logo_rybibq.png" alt="logo PussyFans" class="logo">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,25 +9,31 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
-        <li class="nav-item active mr-3">
-          <a class="nav-link" href="#">Accueil</a>
+        <li class="nav-item mr-3 ms-3">
+          <%= link_to "Accueil", root_path, class:"text-white btn btn-info" %>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">A Propos de Nous</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#">Contact</a>
-        </li>
+        </li></ul>
+                <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
+        <div class="container"></div>
             <li class="nav-item mr-3">
-          <%= link_to "S'inscrire", new_user_registration_path, class:"nav-link btn btn-warning text-white" %>
+          <%= link_to "S'inscrire", new_user_registration_path, class:"btn btn-secondary text-white" %>
         </li>
-        <li class="nav-item mr-3">
-          <%= link_to "Se Connecter", new_user_session_path, class:"nav-link btn btn-secondary text-white" %>
+        </ul>
+        <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
+  
+        <li class="nav-item mr-3 ms-3">
+          <%= link_to "Connexion", new_user_session_path, class:"btn btn-info text-white" %>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 </header>
+<br /><br />
 
 
