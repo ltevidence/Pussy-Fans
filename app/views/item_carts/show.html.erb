@@ -4,9 +4,9 @@
   <% @items.each_with_index do |item, index| %>
     <div class="col-md-3 d-flex align-items-stretch">
       <div href="#" class="card card-product-grid mt-4">
-        <a href="/items/<%=item.id%>"> <%= image_tag item.image_url, class:"img-thumbnail"%> </a>
+        <a href="/potit_chat/<%=item.id%>"><%=image_tag item.image_url, class:"img-thumbnail"%></a>
         <figcaption class="info-wrap text-center">
-          <a href="items/<%=item.id%>"><%= item.title%></a>
+          <%= link_to item.title , item_path(item.id) %>
           <div class="price mt-1 text-center"><%= item.price %>€ </div> <!-- price-wrap.// -->
         </figcaption>
       </div>
