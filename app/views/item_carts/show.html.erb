@@ -1,0 +1,11 @@
+<div class="row mt-4">
+<% @items.each do |item|%>
+	<div class="col-md-4">
+		<div href="#" class=" mt-4 d-flex-center">
+				<%= image_tag item.image_url, class:"img-index"%>
+			<!-- price-wrap.// -->
+		</div>
+		<a href="items/<%=item_id%>"><%= item.title%></a> 
+	</div> <!-- col.// -->
+	   <%end%>
+</div><!-- container // -->
