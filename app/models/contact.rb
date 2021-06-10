@@ -4,7 +4,7 @@ class Contact < ActiveRecord::Base
     :presence => :true,
     :format => { 
       :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
-      :message => "L'adresse email n'est pas conforme"
+      :message => "must be a valid email address"
     }
   validates :message, :presence => :true
   validates :object, :presence => :true
