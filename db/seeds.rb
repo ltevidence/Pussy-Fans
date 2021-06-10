@@ -33,9 +33,9 @@ def create_items(nb_items)
     title = Faker::Book.title
     description = Faker::Lorem.sentences(number: rand(3..8))
     price = Faker::Number.between(from: 15.0, to: 100.0).round(2)
-    image_url = "#{idx_item + 1}.jpg"
+    image_url = ["https://res.cloudinary.com/dcmcouvju/image/upload/v1623320480/1_jxyqjl.jpg", "https://res.cloudinary.com/dcmcouvju/image/upload/v1623320480/2_vdltby.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320480/3_qej8tv.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320480/4_anys0a.jpg", "https://res.cloudinary.com/dcmcouvju/image/upload/v1623320480/5_pcfaqe.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320480/6_ljs9rz.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/7_qevhnq.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/8_xdqq9t.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/9_qmnaf3.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/10_cunayo.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/11_woeg8z.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/12_b21tlg.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/13_leie46.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/14_zojd6s.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/15_mvc1o5.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320481/16_lr16pd.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/17_eicv2g.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/18_qgemiz.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/19_an2zxh.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/20_qojrka.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/21_c8exzj.jpg","https://res.cloudinary.com/dcmcouvju/image/upload/v1623320482/22_xplnk1.jpg"]
 
-    item = Item.create(title: title, description: description.join(' '), price: price, image_url: image_url)
+    item = Item.create(title: title, description: description.join(' '), price: price, image_url: image_url[rand(image_url.count)])
     puts "--------------- Item n°#{idx_item} ----------------\n\n"
 
     status_creation(item, 'item', idx_item)
