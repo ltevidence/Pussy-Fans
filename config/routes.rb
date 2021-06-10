@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   get 'user/show'
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
-  resources :contacts
+  resources :contacts, only: [:create, :new]
   get 'static_pages/about'
-  get 'static_pages/contact'
   root 'items#index'
   resources :item_carts, only: [:index, :show, :create]
   resources :carts, only: [:index]

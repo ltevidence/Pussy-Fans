@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
     
     if @contact.save
       ContactMailer.general_message(@contact).deliver
+      ContactMailer.personnal_message(@contact).deliver
       redirect_to root_path, notice: "Message envoyé !"
     else
       render :new

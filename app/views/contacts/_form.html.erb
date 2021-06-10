@@ -1,33 +1,113 @@
-<%= form_for(@contact) do |f| %>
+<body>
+  <div class="container">
+  <%= form_for(@contact) do |f| %>
   <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h3><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+  <div id="error_explanation">
+    <h3><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h3>
 
-      <ul>
+    <ul>
       <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <div class="form-group">
+                  <%= f.label :name, "Nom" %><br />
+                  <%= f.text_field :name, class:"form-control" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <div class="form-group">
+                  <%= f.label :email, "Email" %><br />
+                  <%= f.text_field :email, class:"form-control" %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <br>
+              <div class="md-form mb-0">
+               <%= f.label :object,"Objet" %><br />
+               <%= f.text_field :object, class:"form-control" %>
+             </div>
+           </div>
+         </div>
+
+         <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-12">
+
+            <div class="md-form">
+              <br>
+              <%= f.label :message, "Message" %><br />
+              <%= f.text_area :message, class:"form-control", rows:'3' %>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="text-center text-md-left">
+
+        <div class="actions">
+          <br>
+          <%= f.submit "Envoyer", class:"btn btn-primary" %>
+        </div>
+        <% end %>
+        <div class="status"></div>
+      </div>
+    </div>
+
+    <div class="col-md-3 text-center">
+      <ul class="list-unstyled mb-0">
+        <li><i class="fas fa-map-marker-alt fa-2x"></i>
+          <p>Chatville, CH 118 218, Chatpays</p>
+        </li>
+
+        <li><i class="fas fa-phone mt-4 fa-2x"></i>
+          <p>+33 77 55 64 84</p>
+        </li>
+
+        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+          <p>pussyfans@yopmail.com</p>
+        </li>
+      </ul>
+    </div>
+
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-    <div class="field">
-    <%= f.label :object %><br />
-    <%= f.text_field :object %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br />
-    <%= f.text_area :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Send"%>
-  </div>
-<% end %>
+</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
