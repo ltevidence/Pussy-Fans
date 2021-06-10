@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :item_carts, only: [:index, :show, :create]
   resources :carts, only: [:index]
-  resources :users, only: [:show] do 
+  resources :users, only: [:show], path: :mon_profil do 
     resources :avatars, only: [:create]
   end
   post 'create', to: 'item_carts#create', as: 'create_item_cart'
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show], path: :potit_chat
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
