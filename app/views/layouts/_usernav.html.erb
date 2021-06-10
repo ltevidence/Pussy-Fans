@@ -1,7 +1,7 @@
 <header class="section-header">
-<nav class="navbar navbar-main navbar-expand-lg navbar-light">
+<nav class="navbar navbar-main navbar-expand-lg bg-white fixed-top">
   <div class="container">
-    <img src="https://res.cloudinary.com/dcmcouvju/image/upload/v1623256131/logo_rybibq.png" alt="logo PussyFans" class="logo">
+  <a href="/" class="navbar-brand"><img src="https://res.cloudinary.com/dcmcouvju/image/upload/v1623256131/logo_rybibq.png" alt="logo PussyFans" class="w-25"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,25 +9,33 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
-        <li class="nav-item active mr-3">
-          <a class="nav-link" href="#">Accueil</a>
+        <li class="nav-item mr-3 ms-3">
+           <%= link_to "Accueil", root_path, class:"text-white btn btn-info" %>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">A Propos de Nous</a>
+         <%= link_to "A Propos de nous", static_pages_about_path, class:"nav-link"%>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#">Contact</a>
+          <%= link_to "Contact", static_pages_contact_path, class:"nav-link"%>
         </li>
         <li class="nav-item">
             <%= link_to "Mon Profil", user_path(current_user.id), class:"nav-link" %>
-        </li>
+        </li></ul>
+         <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0 ms-2">
             <li class="nav-item">
-          <%= link_to "Se deconnecter", destroy_user_session_path, method: "delete", class:"nav-link btn btn-warning text-white" %>
+          <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class:"btn btn-secondary text-white" %>
+        </li></ul>
+         <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
+         <div class="container"></div>
+         <li class="nav-item d-flex">
+           <%= button_to  checkout_create_path(total: @item.price * 100) ,class:"btn btn-primary me-3", remote: true do %>
+                <i class="fas fa-shopping-basket"></i>
+                <% end %>
+          <input id="inc" size="1" value="0"></input>
         </li>
-      <li class="nav-item" ><h1 class="fas fa-shopping-cart btn btn-info icone"></h1>
-      <input id="inc" size="1" value="0"></input></li>
       </ul>
     </div>
   </div>
 </nav>
 </header>
+<br /><br /><br /><br /><br /><br />

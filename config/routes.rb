@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  get 'static_pages/about'
+  get 'static_pages/contact'
   root 'items#index'
   resources :item_carts, only: [:index, :show, :create]
   resources :carts, only: [:index]
