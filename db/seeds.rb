@@ -10,7 +10,7 @@ require 'faker'
 
 ITEMS_NUM = 20
 USERS_NUM = 10
-ITEM_CARTS_NUM = 5
+ITEM_CARTS_NUM = 20
 
 def reset_database(tables_name)
   tables_name.each do |table_name|
@@ -58,11 +58,10 @@ def create_users(nb_users)
 end
 
 def create_item_carts(nb_items_to_cart)
-  item = Item.all.sample
   nb_items_to_cart.times do |idx_item_cart|
+    item = Item.all.sample
     cart = Cart.all.sample
     item_cart = ItemCart.create(item: item, cart: cart)
-    ItemCart.create(item: item, cart: cart)
 
     puts "--------------- Item_cart n°#{idx_item_cart} ----------------\n\n"
     status_creation(item_cart, 'item_cart', idx_item_cart)

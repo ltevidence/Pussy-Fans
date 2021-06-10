@@ -1,4 +1,5 @@
 class ItemCartsController < ActionController::Base
+  include ApplicationHelper
   layout "application"
   before_action :authenticate_user!, only: [:create]
 
@@ -7,20 +8,24 @@ class ItemCartsController < ActionController::Base
   end
 
   def show
-    @items_of_cart = ItemCart.find(params[:id])
+    @current_cart = current_user.cart
+    @items = @current_cart.items
   end
 
   def create
+
     @item = Item.find(params[:item_id])
     @cart = current_user.cart
     @items_of_cart = ItemCart.new(item: @item, cart: @cart)
-    if (@items_of_cart.save)
-      flash[:success] = "Bravo la photo n°#{@item.id} a bien été ajouté au panier"
-      render 'items#index'
-    else
-      redirect_to root_path, :locals => {:sucess_message => nil, :message_failure => "Nous n'avons pas réussi à créer  pour la (ou les) raison(s) suivante(s) :"}
-    end
+    puts "\n\n\n#{flash_class(:success)}\n\n\n"
 
+    if @items_of_cart.save
+      flash[:success] = "Bravo la photo n°#{@item.id} a bien été ajouté au panier"
+    else
+      flash[:alert] = "Echec de création de l'objet due a:\n 
+                      #{@items_of_cart.errors.full_messages.to_sentence}"
+    end
+    redirect_to root_path
   end
 
   private
