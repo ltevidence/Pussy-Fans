@@ -1,5 +1,4 @@
-<body>
-  <div class="container-fluid">
+  <div class="container-fluid>
     <div class="container">
     <div class="row">
   <% @items.each_with_index do |item, index| %>
@@ -15,5 +14,5 @@
   <%end%>
   <div class="bd-example d-flex mt-5 justify-content-center">
     <%= button_to "Montant total : #{@total} € TTC", checkout_create_path(total: @total * 100), class:"btn btn-info btn-lg px-5", remote: true%>
+    </div>
   </div>
-</body>

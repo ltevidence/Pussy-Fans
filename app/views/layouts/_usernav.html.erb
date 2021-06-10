@@ -2,36 +2,26 @@
 <nav class="navbar navbar-main navbar-expand-lg bg-white fixed-top">
   <div class="container">
   <a href="/" class="navbar-brand"><img src="https://res.cloudinary.com/dcmcouvju/image/upload/v1623256131/logo_rybibq.png" alt="logo PussyFans" class="w-25"></a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
-        <li class="nav-item mr-3 ms-3">
-           <%= link_to "Accueil", root_path, class:"text-white btn btn-info" %>
+        <li class="nav-item">
+          <%= link_to "Accueil", root_path, class:"text-white btn btn-info" %>
         </li>
         <li class="nav-item mr-3">
-         <%= link_to "A Propos de nous", static_pages_about_path, class:"nav-link"%>
+          <%= link_to "A propos", static_pages_about_path, class:"nav-link"%>
         </li>
         <li class="nav-item mr-3">
           <%= link_to "Contact", new_contact_path, class:"nav-link"%>
         </li>
         <li class="nav-item">
             <%= link_to "Mon Profil", user_path(current_user.id), class:"nav-link" %>
-        </li></ul>
-         <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0 ms-2">
-            <li class="nav-item">
+        </li>
+            <li class="nav-item me-4">
           <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class:"btn btn-secondary text-white" %>
-        </li></ul>
-         <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
-         <div class="container"></div>
+        </li>
          <li class="nav-item d-flex">
            <%= link_to  item_cart_path(current_user.id), class:"btn btn-primary me-3" do %>
                 <i class="fas fa-shopping-basket"></i>
             <% end %>
-          <input id="inc" size="1" value="0"></input>
         </li>
       </ul>
     </div>
