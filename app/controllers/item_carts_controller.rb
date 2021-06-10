@@ -1,7 +1,7 @@
 class ItemCartsController < ActionController::Base
   include ApplicationHelper
   layout "application"
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :show]
 
   def index
     @items_of_cart = ItemCart.all
@@ -17,7 +17,6 @@ class ItemCartsController < ActionController::Base
     @item = Item.find(params[:item_id])
     @cart = current_user.cart
     @items_of_cart = ItemCart.new(item: @item, cart: @cart)
-    puts "\n\n\n#{flash_class(:success)}\n\n\n"
 
     if @items_of_cart.save
       flash[:success] = "Bravo la photo n°#{@item.id} a bien été ajouté au panier"
