@@ -42,9 +42,12 @@
             <p>
               <%= link_to "Liste des photos", items_path, class:"text-reset"%>
             </p>
+            <%if user_signed_in?%>
             <p>
               <%= link_to "Mon panier", item_cart_path(current_user.id), class:"text-reset"%>
             </p>
+            <%else%>
+            <%end%>
           </div>
           <!-- Grid column -->
 
