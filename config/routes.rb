@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+  get 'static_pages/contact'
   devise_for :users
   root 'items#index'
   resources :item_carts, only: [:index, :show, :create]
